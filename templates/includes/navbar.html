@@ -1,0 +1,58 @@
+ <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+   <h2 class="mb-0 site-logo"><a href="/main_screen" class="h2 mb-0"><img src="https://gipi.ai/wp-content/uploads/2023/08/logo_white-svg.svg" height="50" width="60" /><span class="text-succsess">   |  </span> </a></h2>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/about">Hakkımızda </a>
+          </li>
+
+        </ul>
+          <ul class="navbar-nav ml-auto">
+          {% if request.user.is_authenticated %}
+          <li class="nav-item active">
+            <a class="nav-link" href="/admin">Kontrol Paneli</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/">GIPI Chat </a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/logout">Çıkış Yap</a>
+          </li>
+          {% else %}
+
+          <li class="nav-item active">
+            <a class="nav-link" href="/login">Giriş Yap</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/register">Kayıt Ol</a>
+          </li>
+          {% endif %}
+
+
+          </ul>
+        </div>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    {% block styles %}{% endblock %}
+  </head>
+  <body>
+    {% block content %}{% endblock %}
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    {% block scripts %}{% endblock %}
+  </body>
+</html>
+
+</nav>

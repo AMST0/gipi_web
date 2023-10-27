@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block body %}
+   <h2 class="jmbotron text-center"><a href="/" class="jmbotron text-center"> <img src="https://gipi.ai/wp-content/uploads/2023/08/logo_white-svg.svg" height="200" width="200" /><span class="text-primary">  </span> </a></h2>
+
+<style>
+
+        #chat-box {
+            max-height: 4000px;
+            overflow-y: auto;
+            border: 10x solid #ccc;
+            padding: 100px;
+            background-color: #f9f9f9;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #7a1de2;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        #chat-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #7247cf;
+            border-radius: 6px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        </style>
+
+        <div class = "jmbotron text-center">
+            <div id="chat-container">
+                <div id="chat-box">
+
+            <h3>YAPAY ZEKA DÜNYASINA HOŞGELDİNİZ</h3>
+            <h4>YAKINDA SİZLERLE OLCAZ</h4>
+            {% if request.user.is_authenticated %}
+            <h4>Merhaba, {{user.username}} !</h4>
+            {% else %}
+            <h4>Giriş Yapın...<h4>
+            {% endif %}
+        </div>
+            </div>
+                </div>
+
+{% endblock body %}
